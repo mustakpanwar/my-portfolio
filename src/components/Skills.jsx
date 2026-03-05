@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import FadeIn from "./FadeIn";
 import useIsMobile from "../hooks/useIsMobile";
 import data from "../data/portfolioData";
