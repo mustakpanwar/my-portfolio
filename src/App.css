@@ -1,77 +1,140 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap');
 
-/* ─── Reset ─── */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* ─── CSS Variables — Dark Theme (default) ─── */
+:root, [data-theme="dark"] {
+  --bg:           #080a12;
+  --bg-alt:       rgba(255,255,255,0.015);
+  --bg-card:      rgba(255,255,255,0.03);
+  --bg-card-alt:  rgba(255,255,255,0.02);
+  --border:       rgba(255,255,255,0.07);
+  --border-accent:rgba(0,224,200,0.15);
+  --text-primary: #ffffff;
+  --text-secondary:#aab8c8;
+  --text-muted:   #556070;
+  --text-faint:   #3a4a5a;
+  --accent:       #00E0C8;
+  --accent-glow:  rgba(0,224,200,0.3);
+  --accent-bg:    rgba(0,224,200,0.08);
+  --accent-border:rgba(0,224,200,0.25);
+  --nav-bg:       rgba(8,10,18,0.92);
+  --scrollbar-bg: #080a12;
+  --input-bg:     rgba(255,255,255,0.04);
+  --input-border: rgba(255,255,255,0.1);
+  --tag-bg:       rgba(255,255,255,0.05);
+  --tag-border:   rgba(255,255,255,0.08);
+  --tag-text:     #aab8c8;
+  --shadow-card:  0 16px 40px rgba(0,0,0,0.4);
 }
 
-html {
-  scroll-behavior: smooth;
+/* ─── CSS Variables — Light Theme ─── */
+[data-theme="light"] {
+  --bg:           #f0f4f8;
+  --bg-alt:       #e8edf3;
+  --bg-card:      #ffffff;
+  --bg-card-alt:  #f8fafc;
+  --border:       rgba(0,0,0,0.08);
+  --border-accent:rgba(0,180,160,0.3);
+  --text-primary: #0d1117;
+  --text-secondary:#374151;
+  --text-muted:   #6b7280;
+  --text-faint:   #9ca3af;
+  --accent:       #00b8a2;
+  --accent-glow:  rgba(0,184,162,0.25);
+  --accent-bg:    rgba(0,184,162,0.08);
+  --accent-border:rgba(0,184,162,0.3);
+  --nav-bg:       rgba(240,244,248,0.95);
+  --scrollbar-bg: #e8edf3;
+  --input-bg:     #ffffff;
+  --input-border: rgba(0,0,0,0.12);
+  --tag-bg:       rgba(0,0,0,0.04);
+  --tag-border:   rgba(0,0,0,0.08);
+  --tag-text:     #374151;
+  --shadow-card:  0 8px 32px rgba(0,0,0,0.1);
 }
+
+/* ─── Reset ─── */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
-  background: #080a12;
-  color: #fff;
+  background: var(--bg);
+  color: var(--text-primary);
   font-family: 'DM Sans', sans-serif;
+  transition: background 0.4s ease, color 0.4s ease;
 }
 
 /* ─── Scrollbar ─── */
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #080a12; }
-::-webkit-scrollbar-thumb { background: rgba(0, 224, 200, 0.3); border-radius: 3px; }
+::-webkit-scrollbar-track { background: var(--scrollbar-bg); }
+::-webkit-scrollbar-thumb { background: var(--accent); opacity: 0.4; border-radius: 3px; }
 
 /* ─── Animations ─── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(28px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50%       { opacity: 0; }
 }
-
 @keyframes scrollDot {
   0%, 100% { transform: translateY(0);    opacity: 1; }
   60%       { transform: translateY(10px); opacity: 0; }
   61%       { transform: translateY(0);    opacity: 0; }
   80%       { opacity: 1; }
 }
-
 @keyframes fadeUpDown {
-  0%, 100% { transform: translateY(0);   opacity: 0.7; }
+  0%, 100% { transform: translateY(0);    opacity: 0.7; }
   50%       { transform: translateY(-5px); opacity: 1; }
 }
-
 @keyframes spinRing {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
 }
-
 @keyframes floatBadge {
   0%, 100% { transform: translateY(0px); }
   50%       { transform: translateY(-8px); }
 }
+@keyframes themeToggle {
+  0%   { transform: scale(1) rotate(0deg); }
+  50%  { transform: scale(0.85) rotate(180deg); }
+  100% { transform: scale(1) rotate(360deg); }
+}
+
+/* ─── Theme toggle button ─── */
+.theme-toggle {
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 1px solid var(--border-accent);
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-size: 1.15rem;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+.theme-toggle:hover {
+  background: var(--accent);
+  color: var(--bg);
+  box-shadow: 0 0 18px var(--accent-glow);
+  transform: scale(1.08);
+}
+.theme-toggle.spinning {
+  animation: themeToggle 0.4s ease;
+}
 
 /* ─── Responsive ─── */
 @media (max-width: 768px) {
-  .nav-desktop   { display: none !important; }
-  .nav-burger    { display: flex !important; }
-
-  .hero-section  { padding: 0 1.25rem !important; }
-  .hero-buttons  { flex-direction: column !important; }
+  .nav-desktop      { display: none !important; }
+  .nav-burger       { display: flex !important; }
+  .hero-section     { padding: 0 1.25rem !important; }
+  .hero-buttons     { flex-direction: column !important; }
   .hero-buttons button,
-  .hero-buttons a {
-    width: 100% !important;
-    justify-content: center !important;
-    text-align: center !important;
-  }
-  .hero-image-mobile { display: flex !important; }
-  .hero-right    { display: none !important; }
-
-  .section-pad   { padding: 70px 1.25rem !important; }
-  .skills-grid   { grid-template-columns: 1fr !important; }
+  .hero-buttons a   { width: 100% !important; justify-content: center !important; text-align: center !important; }
+  .hero-image-mobile{ display: flex !important; }
+  .hero-right       { display: none !important; }
+  .section-pad      { padding: 70px 1.25rem !important; }
+  .skills-grid      { grid-template-columns: 1fr !important; }
   .scroll-indicator { display: none !important; }
 }

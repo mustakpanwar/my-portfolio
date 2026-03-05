@@ -4,12 +4,13 @@ const data = {
   tagline: "I build fast, secure & beautiful websites.",
   about:
     "I'm a Web Developer based in Panipat, India, specializing in WordPress and Shopify development. I craft SEO-friendly, responsive websites that perform across every device — combining clean code, smart architecture, and pixel-perfect design to help businesses grow online.",
-  contact: {
-    email: "mustakpanwar05@gmail.com",
-    phone: "+91 7988227093",
-    location: "Panipat, Haryana, India",
-    linkedin: "#",
-  },
+    contact: {
+      email: "mustakpanwar05@gmail.com",
+      phone: "+91 7988227093",
+      location: "Panipat, Haryana, India",
+      linkedin: "https://linkedin.com/in/mustakpanwar",  // 👈 add your real URL
+      github: "https://github.com/mustakpanwar",          // 👈 add your real URL
+    },
   skills: [
     { category: "WordPress", items: ["Theme Customization", "Plugin Development", "Elementor", "WPBakery", "WooCommerce"] },
     { category: "Shopify", items: ["Store Setup", "Theme Uploads", "Frontend Dev", "Payment Integration", "Section Editing"] },
@@ -74,6 +75,7 @@ const data = {
     { degree: "Master of Computer Applications (MCA)", institution: "Panipat Institute of Engineering & Technology", period: "2022 – 2024" },
     { degree: "Bachelor of Computer Applications (BCA)", institution: "Asia Pacific Institute of Information & Technology", period: "2019 – 2022" },
   ],
+  
 };
 
 export const NAV_LINKS = ["About", "Skills", "Experience", "Certifications", "Projects", "Contact"];
