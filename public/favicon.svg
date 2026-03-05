@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Background circle -->
+  <circle cx="32" cy="32" r="32" fill="#080a12"/>
+  <!-- Teal border ring -->
+  <circle cx="32" cy="32" r="30" fill="none" stroke="#00E0C8" stroke-width="2"/>
+  <!-- M letter -->
+  <text x="7" y="44" font-family="Arial Black, sans-serif" font-weight="900" font-size="28" fill="#00E0C8">M</text>
+  <!-- P letter -->
+  <text x="34" y="44" font-family="Arial Black, sans-serif" font-weight="900" font-size="28" fill="#ffffff">P</text>
+  <!-- Dot -->
+  <circle cx="58" cy="42" r="3" fill="#00E0C8"/>
+</svg>
