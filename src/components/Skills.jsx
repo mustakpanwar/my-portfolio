@@ -240,7 +240,7 @@ export default function Skills() {
           }}>
             {[
               { num: "10+", label: "Projects Delivered", icon: "🚀", color: "var(--accent)" },
-              { num: "1+",  label: "Years Experience",   icon: "💼", color: "#96bf48" },
+              { num: "1.5+",  label: "Years Experience",   icon: "💼", color: "#96bf48" },
               { num: "20%", label: "Avg. SEO Boost",     icon: "📈", color: "#e74c3c" },
               { num: "6",   label: "Skill Categories",   icon: "🛠️", color: "#9b59b6" },
             ].map(({ num, label, icon, color }) => (

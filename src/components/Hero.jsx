@@ -18,7 +18,7 @@ function ProfileImage({ size = 320 }) {
       <div style={{ position: "absolute", bottom: size === 220 ? 10 : 10, left: size === 220 ? -40 : -20, zIndex: 3, background: "rgba(8,10,18,0.92)", border: "1px solid rgba(0,224,200,0.3)", backdropFilter: "blur(10px)", borderRadius: 12, padding: size === 220 ? "8px 12px" : "10px 16px", display: "flex", alignItems: "center", gap: size === 220 ? "8px" : "10px", animation: "floatBadge 3s ease-in-out infinite" }}>
         <span style={{ fontSize: size === 220 ? "1.1rem" : "1.4rem" }}>💼</span>
         <div>
-          <div style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: size === 220 ? "0.9rem" : "1rem", color: "#00E0C8", lineHeight: 1 }}>1+</div>
+          <div style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: size === 220 ? "0.9rem" : "1rem", color: "#00E0C8", lineHeight: 1 }}>1.5+</div>
           <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: size === 220 ? "0.62rem" : "0.7rem", color: "#7a8fa6" }}>Years Exp.</div>
         </div>
       </div>

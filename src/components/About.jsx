@@ -26,7 +26,7 @@ export default function About() {
             </h2>
             <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.05rem", color: "var(--text-muted)", lineHeight: 1.85, marginBottom: "1.5rem" }}>{data.about}</p>
             <div style={{ display: "flex", gap: "2rem" }}>
-              {[["1+", "Year Experience"], ["20%", "SEO Boost"], ["10+", "Projects Delivered"]].map(([num, label]) => (
+              {[["1.5+", "Year Experience"], ["20%", "SEO Boost"], ["10+", "Projects Delivered"]].map(([num, label]) => (
                 <div key={label}>
                   <div style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: "2rem", color: "var(--accent)" }}>{num}</div>
                   <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.82rem", color: "var(--text-muted)", letterSpacing: "0.06em" }}>{label}</div>
